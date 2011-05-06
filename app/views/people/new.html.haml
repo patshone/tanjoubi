@@ -1,0 +1,10 @@
+- form_for @person do |f|
+  %p
+    = f.label :first_name, "First Name" 
+    = f.text_field :first_name
+    = f.label :last_name, "Last Name" 
+    = f.text_field :last_name
+  %p
+    = f.label :birth_date, "Birth Date"
+    = date_select 'person', 'birth_date', {:order => [:month, :day, :year],:start_year => 1920}
+  = f.submit

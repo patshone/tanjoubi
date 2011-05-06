@@ -1,0 +1,23 @@
+%h1 People
+%table
+  %tr
+    %th Name
+    %th Birthday
+    %th Email
+    %th Card
+    %th Present
+    %th
+    %th
+    %th
+  - for person in @people
+    %tr
+      %td #{person.first_name + " " + person.last_name}
+      %td= person.birth_date
+      %td= person.email 
+      %td= person.card
+      %td= person.present
+      %td= link_to 'Show', person
+      %td= link_to 'Edit', edit_person_path(person)
+      %td= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete
+
+= link_to 'New Person', new_person_path
